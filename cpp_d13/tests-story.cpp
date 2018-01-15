@@ -33,9 +33,9 @@ void	testStory(std::stringstream &out)
 	cr_assert_line(out, "BUZZ: Yoann senorita \"I'm buzz lightyear !\" senorita", "Story 1st line"); // Buzz
 	cr_assert_line(out, "WOODY: Malcome \"There is a snake in my boot\"", "Story 2nd line"); // Woody
 	cr_assert_line(out, "This is an ascii art, I swear !", "Story 3rd line"); // Buzz
-	cr_assert_line(out, "setAscii: bad new illustration", "Story 4th line"); // Woody
-	cr_assert_line(out, "BUZZ: Yoann senorita \"Bye bye\" senorita", "Story 5th line"); // Buzz
-	cr_assert_line(out, "WOODY: Malcome \"Bye bye\"", "Story 6th line"); // Woody
+	cr_assert_line(out, "BUZZ: Yoann senorita \"Bye bye\" senorita", "Story 6th line"); // Buzz
+	cr_assert_line(out, "setAscii: bad new illustration", "Story 5th line"); // Woody
+	cr_assert_line(out, "WOODY: Malcome \"Bye bye\"", "Story 4th line"); // Woody
 	cr_assert_eq(buzz.getAscii(), (std::string)"This is an ascii art, I swear !", "Checking auto ascii change");
 	cr_assert_eq(woody.getAscii(), (std::string)"ERROR", "Checking bad auto ascii change");
 
@@ -49,10 +49,14 @@ void	testStory(std::stringstream &out)
 	cr_assert_line(out, "BUZZ: Yoann senorita \"I'm buzz lightyear !\" senorita", "Story 1st line"); // Buzz
 	cr_assert_line(out, "speak_es: wrong mode", "Story 2nd line"); // Woody
 	cr_assert_line(out, "This is an ascii art, I swear !", "Story 3rd line"); // Buzz
-	cr_assert_line(out, "setAscii: bad new illustration", "Story 4th line"); // Woody
-	cr_assert_line(out, "BUZZ: Yoann senorita \"Bye bye\" senorita", "Story 5th line"); // Buzz
+	cr_assert_line(out, "BUZZ: Yoann senorita \"Bye bye\" senorita", "Story 4th line"); // Buzz
+	cr_assert_line(out, "setAscii: bad new illustration", "Story 5th line"); // Woody
 	cr_assert_line(out, "speak_es: wrong mode", "Story 6th line"); // Woody
 	cr_assert_eq(buzz.getAscii(), (std::string)"This is an ascii art, I swear !", "Checking auto ascii change");
 	cr_assert_eq(woody.getAscii(), (std::string)"ERROR", "Checking bad auto ascii change");
+
+	ToyStory::tellMeAStory("_b_a_d_f_i_l_e_._t_x_t_", buzz, &Toy::speak, woody, &Toy::speak);
+
+	cr_assert_line(out, "Bad Story", "Bad Story");
 }
 #endif
