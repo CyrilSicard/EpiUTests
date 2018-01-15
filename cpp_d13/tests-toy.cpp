@@ -218,3 +218,36 @@ void	testBaW(std::stringstream &out)
 	delete tw;
 }
 #endif
+#if	TEST_EXO >= 3
+
+void	testSpeak(std::stringstream &out)
+{
+	Toy		t(Toy::ToyType::BASIC_TOY, "Malcome", "empty.txt");
+	Buzz	b("Yoann");
+	Woody	w("Joanna");
+
+	cr_assert_eq(t.getType(), Toy::ToyType::BASIC_TOY, "Toy type");
+	cr_assert_eq(t.getName(), (std::string)"Malcome", "Checking Toy name");
+	cr_assert_eq(t.getAscii(), {}, "Toy ascii art");
+
+	cr_assert_eq(b.getType(), Toy::ToyType::BUZZ, "Buzz type");
+	cr_assert_eq(b.getName(), (std::string)"Yoann", "Checking buzz name");
+	cr_assert_eq(b.getAscii(), CONST_BUZZ_ASCII, "Buzz default ascii art");
+
+	cr_assert_eq(w.getType(), Toy::ToyType::WOODY, "Woody type");
+	cr_assert_eq(w.getName(), (std::string)"Joanna", "Checking woody name");
+	cr_assert_eq(w.getAscii(), CONST_WOODY_ASCII, "Woody default ascii art");
+
+	b.speak("Sur un mal-entendu ça peut passer...");
+
+	cr_assert_line(out, "BUZZ: Yoann \"Sur un mal-entendu ça peut passer...\"", "Checking Buzz speak");
+
+	w.speak("Tu peut m'aider ?");
+
+	cr_assert_line(out, "WOODY: Joanna \"Tu peut m'aider ?\"", "Checking Woody speak");
+
+	t.speak("La confiance n'exclus pas le contrôle.");
+
+	cr_assert_line(out, "Malcome \"La confiance n'exclus pas le contrôle.\"", "Checking Toy speak");
+}
+#endif
