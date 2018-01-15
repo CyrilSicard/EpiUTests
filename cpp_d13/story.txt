@@ -1,0 +1,4 @@
+hi
+picture:cpu.txt
+nothing special
+CU
