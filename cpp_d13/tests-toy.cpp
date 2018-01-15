@@ -251,3 +251,26 @@ void	testSpeak(std::stringstream &out)
 	cr_assert_line(out, "Malcome \"La confiance n'exclus pas le contrôle.\"", "Checking Toy speak");
 }
 #endif
+#if	TEST_EXO >= 4
+
+void	testOps(std::stringstream &out)
+{
+	Toy		t(Toy::ToyType::BASIC_TOY, "Malcome", "empty.txt");
+
+	cr_assert_eq(t.getAscii(), {}, "Checking Ascii art");
+
+	out << t;
+
+	cr_assert_line(out, "Malcome", "Checking op<< Name");
+	cr_assert_line(out, {}, "Checking op<< Ascii art");
+
+	t << "-_-";
+
+	cr_assert_eq(t.getAscii(), (std::string)"-_-", "Checking Ascii art");
+
+	out << t;
+
+	cr_assert_line(out, "Malcome", "Checking op<< Name");
+	cr_assert_line(out, "-_-", "Checking op<< Ascii art");
+}
+#endif
