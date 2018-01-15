@@ -7,17 +7,23 @@ bool		output(false);
 
 #if	TEST_EXO >= 0
 void	testToy(std::stringstream &);
-#elif	TEST_EXO >= 1
+#endif
+#if	TEST_EXO >= 1
 void	testToy2(std::stringstream &);
-#elif	TEST_EXO >= 2
+#endif
+#if	TEST_EXO >= 2
 void	testBaW(std::stringstream &);
-#elif	TEST_EXO >= 3
+#endif
+#if	TEST_EXO >= 3
 void	testSpeak(std::stringstream &);
-#elif	TEST_EXO >= 4
+#endif
+#if	TEST_EXO >= 4
 void	testOps(std::stringstream &);
-#elif	TEST_EXO >= 5
+#endif
+#if	TEST_EXO >= 5
 void	testError(std::stringstream &);
-#elif	TEST_EXO >= 6
+#endif
+#if	TEST_EXO >= 6
 void	testStory(std::stringstream &);
 #endif
 
@@ -62,37 +68,43 @@ int	main(int argc, char **argv)
 			testToy(out);
 	}
 
-#elif	TEST_EXO >= 1
+#endif
+#if	TEST_EXO >= 1
 	if (argc < (output ? 3 : 2) || contains(argc, argv, 1)) {
 		*my_cout << "\033[33m-----------------------------------\033[0m" << std::endl;
 		*my_cout << "\033[33mTesting Canonical form...\033[0m" << std::endl;
 			testToy2(out);
 	}
-#elif	TEST_EXO >= 2
+#endif
+#if	TEST_EXO >= 2
 	if (argc < (output ? 3 : 2) || contains(argc, argv, 2)) {
 		*my_cout << "\033[33m-----------------------------------\033[0m" << std::endl;
 		*my_cout << "\033[33mTesting Buzz & Woody...\033[0m" << std::endl;
 			testBaW(out);
 	}
-#elif	TEST_EXO >= 3
+#endif
+#if	TEST_EXO >= 3
 	if (argc < (output ? 3 : 2) || contains(argc, argv, 3)) {
 		*my_cout << "\033[33m-----------------------------------\033[0m" << std::endl;
 		*my_cout << "\033[33mTesting speak method...\033[0m" << std::endl;
 			testSpeak(out);
 	}
-#elif	TEST_EXO >= 4
+#endif
+#if	TEST_EXO >= 4
 	if (argc < (output ? 3 : 2) || contains(argc, argv, 4)) {
 		*my_cout << "\033[33m-----------------------------------\033[0m" << std::endl;
 		*my_cout << "\033[33mTesting Operators...\033[0m" << std::endl;
 			testOps(out);
 	}
-#elif	TEST_EXO >= 5
+#endif
+#if	TEST_EXO >= 5
 	if (argc < (output ? 3 : 2) || contains(argc, argv, 5)) {
 		*my_cout << "\033[33m-----------------------------------\033[0m" << std::endl;
 		*my_cout << "\033[33mTesting Error managment...\033[0m" << std::endl;
 			testError(out);
 	}
-#elif	TEST_EXO >= 6
+#endif
+#if	TEST_EXO >= 6
 	if (argc < (output ? 3 : 2) || contains(argc, argv, 6)) {
 		*my_cout << "\033[33m-----------------------------------\033[0m" << std::endl;
 		*my_cout << "\033[33mTesting a story...\033[0m" << std::endl;

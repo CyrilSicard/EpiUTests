@@ -52,3 +52,23 @@ void	testToy(std::stringstream &out)
 
 	cr_assert_eq(t2.getAscii(), {}, "Checking ascii art");
 }
+
+#if	TEST_EXO >= 1
+void	testToy2(std::stringstream &out)
+{
+	(void)out;
+
+	Toy t(Toy::ToyType::ALIEN, "Malcome", "popo.txt");
+	Toy t1(Toy::ToyType::ALIEN, "Malcome2", "empty.txt");
+
+	Toy t2 = t;
+
+	cr_assert_eq(t2.getName(), (std::string)"Malcome", "Checking copy constructor");
+	cr_assert_eq(t2.getAscii(), (std::string)"ERROR", "Ascii art copy init");
+
+	t2 = t1;
+
+	cr_assert_eq(t2.getName(), (std::string)"Malcome2", "Checking copy constructor");
+	cr_assert_eq(t2.getAscii(), {}, "Ascii art copy");
+}
+#endif

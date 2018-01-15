@@ -1,11 +1,11 @@
 #!/bin/sh
-if [ -z $1 ] || [ -z $2 ]; then
-	echo "Usage: $0 <ex_path> <ex_num>"
-	exit
-fi
 if [ "$1" == "clean" ]; then
 	rm -f run_test
 	echo "Removed run_test executable."
+	exit
+fi
+if [ -z $1 ] || [ -z $2 ]; then
+	echo "Usage: $0 <ex_path> <ex_num>"
 	exit
 fi
 if [ ! -d "$1" ]; then
