@@ -275,7 +275,6 @@ void	testOps(std::stringstream &out)
 }
 #endif
 #if	TEST_EXO >= 5
-
 void	testError(std::stringstream &out)
 {
 	Toy		t(Toy::ToyType::BASIC_TOY, "Malcome", "empty.txt");
