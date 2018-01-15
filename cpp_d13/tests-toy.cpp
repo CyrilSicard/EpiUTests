@@ -283,8 +283,8 @@ void	testError(std::stringstream &out)
 	Toy::Error err = t.getLastError();
 
 	cr_assert_eq(err.type, Toy::Error::UNKNOWN, "No error (base)");
-	cr_assert_eq(err.where, {}, "No error 1 (base)");
-	cr_assert_eq(err.what, {}, "No error 2 (base)");
+	cr_assert_eq(err.where(), {}, "No error 1 (base)");
+	cr_assert_eq(err.what(), {}, "No error 2 (base)");
 
 	bool r = b.speak_es("Sur un mal-entendu ça peut passer...");
 
@@ -298,16 +298,16 @@ void	testError(std::stringstream &out)
 	err = t.getLastError();
 
 	cr_assert_eq(err.type, Toy::Error::SPEAK, "Speak error");
-	cr_assert_eq(err.where, (std::string)"speak_es", "Where the error is");
-	cr_assert_eq(err.what, (std::string)"wrong mode", "What the error is");
+	cr_assert_eq(err.where(), (std::string)"speak_es", "Where the error is");
+	cr_assert_eq(err.what(), (std::string)"wrong mode", "What the error is");
 
 	t.setAscii("_i_n_n_e_x_i_s_t_a_n_t_f_i_l_e_._t_x_t_");
 
 	err = t.getLastError();
 
 	cr_assert_eq(err.type, Toy::Error::PICTURE, "Ascii error");
-	cr_assert_eq(err.where, (std::string)"setAscii", "Where the error is");
-	cr_assert_eq(err.what, (std::string)"bad new illustration", "What the error is");
+	cr_assert_eq(err.where(), (std::string)"setAscii", "Where the error is");
+	cr_assert_eq(err.what(), (std::string)"bad new illustration", "What the error is");
 
 	t.speak("La confiance n'exclus pas le contrôle.");
 
@@ -316,7 +316,7 @@ void	testError(std::stringstream &out)
 	err = t.getLastError();
 
 	cr_assert_eq(err.type, Toy::Error::UNKNOWN, "No error");
-	cr_assert_eq(err.where, {}, "No error 1");
-	cr_assert_eq(err.what, {}, "No error 2");
+	cr_assert_eq(err.where(), {}, "No error 1");
+	cr_assert_eq(err.what(), {}, "No error 2");
 }
 #endif
