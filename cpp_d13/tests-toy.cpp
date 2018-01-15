@@ -315,8 +315,8 @@ void	testError(std::stringstream &out)
 
 	err = t.getLastError();
 
-	cr_assert_eq(err.type, Toy::Error::UNKNOWN, "No error");
-	cr_assert_eq(err.where(), {}, "No error 1");
-	cr_assert_eq(err.what(), {}, "No error 2");
+	cr_assert_eq(err.type, Toy::Error::PICTURE, "No reset error");
+	cr_assert_eq(err.where(), (std::string)"setAscii", "No reset error 1");
+	cr_assert_eq(err.what(), (std::string)"bad new illustration", "No reset error 2");
 }
 #endif
