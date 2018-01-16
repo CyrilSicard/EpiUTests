@@ -60,7 +60,7 @@ void	testFruits(std::stringstream &out)
 	cr_assert_eq(box.putFruit(fruit), false, "Adding same fruit to the box again");
 	cr_assert_eq(box.nbFruits(), 1, "Checking fruit box size");
 
-	cr_assert_eq(box.putFruit(nullptr), false, "Adding null fruit to the box");
+	cr_assert_eq(box.putFruit((Fruit *)nullptr), false, "Adding null fruit to the box");
 	cr_assert_eq(box.nbFruits(), 1, "Checking fruit box size");
 
 	cr_assert_eq(box.putFruit(&lem), true, "Adding a fruit pointer");
