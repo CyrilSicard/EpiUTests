@@ -9,7 +9,7 @@ char		output = 0;
 void	testmy_print_alpha(FILE *);
 #endif
 #if	TEST_EXO >= 2
-void	testCoconut(std::stringstream &);
+void	testmy_print_revalpha(FILE *);
 #endif
 #if	TEST_EXO >= 3
 void	testMixer(std::stringstream &);
@@ -80,8 +80,8 @@ int	main(int argc, char **argv)
 #if	TEST_EXO >= 2
 	if (argc < (output ? 3 : 2) || contains(argc, argv, 2)) {
 		fprintf(my_cout, "\033[33m-----------------------------------\033[0m\n");
-		fprintf(my_cout, "\033[33mTesting my_print_alpha...\033[0m\n");
-			testCoconut(out);
+		fprintf(my_cout, "\033[33mTesting my_print_revalpha...\033[0m\n");
+			testmy_print_revalpha(out);
 	}
 #endif
 #if	TEST_EXO >= 3
