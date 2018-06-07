@@ -15,7 +15,7 @@ void	testmy_print_revalpha(FILE *);
 void	testmy_print_digits(FILE *);
 #endif
 #if	TEST_EXO >= 4
-void	testVits(FILE *);
+void	testmy_isneg(FILE *);
 #endif
 #if	TEST_EXO >= 5
 void	testHand(FILE *);
@@ -87,15 +87,15 @@ int	main(int argc, char **argv)
 #if	TEST_EXO >= 3
 	if (argc < (output ? 3 : 2) || contains(argc, argv, 3)) {
 		fprintf(my_cout, "\033[33m-----------------------------------\033[0m\n");
-		fprintf(my_cout, "\033[33mTesting my_print_alpha...\033[0m\n");
+		fprintf(my_cout, "\033[33mTesting my_print_digits...\033[0m\n");
 			testmy_print_digits(stream);
 	}
 #endif
 #if	TEST_EXO >= 4
 	if (argc < (output ? 3 : 2) || contains(argc, argv, 4)) {
 		fprintf(my_cout, "\033[33m-----------------------------------\033[0m\n");
-		fprintf(my_cout, "\033[33mTesting my_print_alpha...\033[0m\n");
-			testVits(stream);
+		fprintf(my_cout, "\033[33mTesting my_isneg...\033[0m\n");
+			testmy_isneg(stream);
 	}
 #endif
 #if	TEST_EXO >= 5
