@@ -81,56 +81,56 @@ int	main(int argc, char **argv)
 	if (argc < (output ? 3 : 2) || contains(argc, argv, 2)) {
 		fprintf(my_cout, "\033[33m-----------------------------------\033[0m\n");
 		fprintf(my_cout, "\033[33mTesting my_print_revalpha...\033[0m\n");
-			testmy_print_revalpha(out);
+			testmy_print_revalpha(stream);
 	}
 #endif
 #if	TEST_EXO >= 3
 	if (argc < (output ? 3 : 2) || contains(argc, argv, 3)) {
 		fprintf(my_cout, "\033[33m-----------------------------------\033[0m\n");
 		fprintf(my_cout, "\033[33mTesting my_print_alpha...\033[0m\n");
-			testMixer(out);
+			testMixer(stream);
 	}
 #endif
 #if	TEST_EXO >= 4
 	if (argc < (output ? 3 : 2) || contains(argc, argv, 4)) {
 		fprintf(my_cout, "\033[33m-----------------------------------\033[0m\n");
 		fprintf(my_cout, "\033[33mTesting my_print_alpha...\033[0m\n");
-			testVits(out);
+			testVits(stream);
 	}
 #endif
 #if	TEST_EXO >= 5
 	if (argc < (output ? 3 : 2) || contains(argc, argv, 5)) {
 		fprintf(my_cout, "\033[33m-----------------------------------\033[0m\n");
 		fprintf(my_cout, "\033[33mTesting my_print_alpha...\033[0m\n");
-			testHand(out);
+			testHand(stream);
 	}
 #endif
 #if	TEST_EXO >= 6
 	if (argc < (output ? 3 : 2) || contains(argc, argv, 6)) {
 		fprintf(my_cout, "\033[33m-----------------------------------\033[0m\n");
 		fprintf(my_cout, "\033[33mTesting my_print_alpha...\033[0m\n");
-			testHand(out);
+			testHand(stream);
 	}
 #endif
 #if	TEST_EXO >= 7
 	if (argc < (output ? 3 : 2) || contains(argc, argv, 7)) {
 		fprintf(my_cout, "\033[33m-----------------------------------\033[0m\n");
 		fprintf(my_cout, "\033[33mTesting my_print_alpha...\033[0m\n");
-			testHand(out);
+			testHand(stream);
 	}
 #endif
 #if	TEST_EXO >= 8
 	if (argc < (output ? 3 : 2) || contains(argc, argv, 8)) {
 		fprintf(my_cout, "\033[33m-----------------------------------\033[0m\n");
 		fprintf(my_cout, "\033[33mTesting my_print_alpha...\033[0m\n");
-			testHand(out);
+			testHand(stream);
 	}
 #endif
 #if	TEST_EXO >= 9
 	if (argc < (output ? 3 : 2) || contains(argc, argv, 9)) {
 		fprintf(my_cout, "\033[33m-----------------------------------\033[0m\n");
 		fprintf(my_cout, "\033[33mTesting my_print_alpha...\033[0m\n");
-			testHand(out);
+			testHand(stream);
 	}
 #endif
 	fclose(stream);
