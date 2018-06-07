@@ -6,6 +6,7 @@ int	my_print_digits(void);
 int	my_isneg(int);
 int	my_print_comb(void);
 
+#if	TEST_EXO >= 1
 void	testmy_print_alpha(FILE *out)
 {
 	int res = my_print_alpha();
@@ -13,7 +14,9 @@ void	testmy_print_alpha(FILE *out)
 	cr_assert_nieq(res, 0, "my_print_alpha returns 0");
 	cr_assert_line(out, "abcdefghijklmnopqrstuvwxyz", "my_print_alpha Output");
 }
+#endif
 
+#if	TEST_EXO >= 2
 void	testmy_print_revalpha(FILE *out)
 {
 	int res = my_print_revalpha();
@@ -21,7 +24,9 @@ void	testmy_print_revalpha(FILE *out)
 	cr_assert_nieq(res, 0, "my_print_revalpha returns 0");
 	cr_assert_line(out, "zyxwvutsrqponmlkjihgfedcba", "my_print_revalpha Output");
 }
+#endif
 
+#if	TEST_EXO >= 3
 void	testmy_print_digits(FILE *out)
 {
 	int res = my_print_digits();
@@ -29,7 +34,9 @@ void	testmy_print_digits(FILE *out)
 	cr_assert_nieq(res, 0, "my_print_digits returns 0");
 	cr_assert_line(out, "0123456789", "my_print_digits Output");
 }
+#endif
 
+#if	TEST_EXO >= 4
 void	testmy_isneg(FILE *out)
 {
 	int res = my_isneg(42);
@@ -44,7 +51,9 @@ void	testmy_isneg(FILE *out)
 	res = my_isneg(-0);
 	cr_assert_line(out, "P", "my_isneg: -0 is still positive");
 }
+#endif
 
+#if	TEST_EXO >= 5
 void	testmy_print_comb(FILE *out)
 {
 	int res = my_print_comb();
@@ -61,3 +70,4 @@ void	testmy_print_comb(FILE *out)
 458, 459, 467, 468, 469, 478, 479, 489, 567, 568, 569, 578, 579, 589, 678, \
 679, 689, 789", "my_print_comb output");
 }
+#endif

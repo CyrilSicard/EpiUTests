@@ -4,6 +4,7 @@ int	my_print_comb2(void);
 int	my_print_combn(int);
 int	my_put_nbr(int);
 
+#if	TEST_EXO >= 7
 void	testmy_put_nbr(FILE *out)
 {
 	int res = my_put_nbr(0);
@@ -19,7 +20,9 @@ void	testmy_put_nbr(FILE *out)
 	my_put_nbr(4659274);
 	cr_assert_line(out, "4659274", "Put nbr 4659274");
 }
+#endif
 
+#if	TEST_EXO >= 9
 void	testmy_print_combn(FILE *out)
 {
 	int res = my_print_combn(1);
@@ -39,7 +42,9 @@ void	testmy_print_combn(FILE *out)
 458, 459, 467, 468, 469, 478, 479, 489, 567, 568, 569, 578, 579, 589, 678, \
 679, 689, 789", "my_print_combn(3) output");
 }
+#endif
 
+#if	TEST_EXO >= 6
 void	testmy_print_comb2(FILE *out)
 {
 	int res = my_print_comb2();
@@ -666,3 +671,4 @@ void	testmy_print_comb2(FILE *out)
 93 99, 94 95, 94 96, 94 97, 94 98, 94 99, 95 96, 95 97, \
 95 98, 95 99, 96 97, 96 98, 96 99, 97 98, 97 99, 98 99", "my_print_comb 2 output");
 }
+#endif
