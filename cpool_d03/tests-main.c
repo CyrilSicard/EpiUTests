@@ -18,7 +18,7 @@ void	testmy_print_digits(FILE *);
 void	testmy_isneg(FILE *);
 #endif
 #if	TEST_EXO >= 5
-void	testHand(FILE *);
+void	testmy_print_comb(FILE *);
 #endif
 #if	TEST_EXO >= 6
 void	testHand(FILE *);
@@ -101,8 +101,8 @@ int	main(int argc, char **argv)
 #if	TEST_EXO >= 5
 	if (argc < (output ? 3 : 2) || contains(argc, argv, 5)) {
 		fprintf(my_cout, "\033[33m-----------------------------------\033[0m\n");
-		fprintf(my_cout, "\033[33mTesting my_print_alpha...\033[0m\n");
-			testHand(stream);
+		fprintf(my_cout, "\033[33mTesting my_print_comb...\033[0m\n");
+			testmy_print_comb(stream);
 	}
 #endif
 #if	TEST_EXO >= 6
