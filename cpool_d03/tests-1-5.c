@@ -41,6 +41,6 @@ void	testmy_isneg(FILE *out)
 	res = my_isneg(0);
 	cr_assert_line(out, "P", "my_isneg: 0 is positive");
 	res = my_isneg(-0);
-	cr_assert_line(out, "N", "my_isneg: -0 is negative");
+	cr_assert_line(out, "P", "my_isneg: -0 is still positive");
 }
 
