@@ -12,25 +12,25 @@ void	testmy_print_alpha(FILE *);
 void	testmy_print_revalpha(FILE *);
 #endif
 #if	TEST_EXO >= 3
-void	testMixer(std::stringstream &);
+void	testmy_print_digits(FILE *);
 #endif
 #if	TEST_EXO >= 4
-void	testVits(std::stringstream &);
+void	testVits(FILE *);
 #endif
 #if	TEST_EXO >= 5
-void	testHand(std::stringstream &);
+void	testHand(FILE *);
 #endif
 #if	TEST_EXO >= 6
-void	testHand(std::stringstream &);
+void	testHand(FILE *);
 #endif
 #if	TEST_EXO >= 7
-void	testHand(std::stringstream &);
+void	testHand(FILE *);
 #endif
 #if	TEST_EXO >= 8
-void	testHand(std::stringstream &);
+void	testHand(FILE *);
 #endif
 #if	TEST_EXO >= 9
-void	testHand(std::stringstream &);
+void	testHand(FILE *);
 #endif
 
 # define	BUFSIZZ 512
@@ -88,7 +88,7 @@ int	main(int argc, char **argv)
 	if (argc < (output ? 3 : 2) || contains(argc, argv, 3)) {
 		fprintf(my_cout, "\033[33m-----------------------------------\033[0m\n");
 		fprintf(my_cout, "\033[33mTesting my_print_alpha...\033[0m\n");
-			testMixer(stream);
+			testmy_print_digits(stream);
 	}
 #endif
 #if	TEST_EXO >= 4
