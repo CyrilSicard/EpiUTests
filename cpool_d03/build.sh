@@ -1,6 +1,7 @@
 #!/bin/sh
 if [ "$1" == "clean" ]; then
 	rm -f run_test
+	rm -f log.txt
 	echo "Removed run_test executable."
 	exit
 fi
