@@ -24,16 +24,11 @@ void	testmy_print_comb(FILE *);
 void	testmy_print_comb2(FILE *);
 #endif
 #if	TEST_EXO >= 7
-void	testHand(FILE *);
-#endif
-#if	TEST_EXO >= 8
-void	testHand(FILE *);
+void	testmy_put_nbr(FILE *);
 #endif
 #if	TEST_EXO >= 9
-void	testHand(FILE *);
+void	testmy_print_combn(FILE *);
 #endif
-
-# define	BUFSIZZ 512
 
 static char	containsstr(int s, char **list, const char *val)
 {
@@ -115,22 +110,15 @@ int	main(int argc, char **argv)
 #if	TEST_EXO >= 7
 	if (argc < (output ? 3 : 2) || contains(argc, argv, 7)) {
 		fprintf(my_cout, "\033[33m-----------------------------------\033[0m\n");
-		fprintf(my_cout, "\033[33mTesting my_print_alpha...\033[0m\n");
-			testHand(stream);
-	}
-#endif
-#if	TEST_EXO >= 8
-	if (argc < (output ? 3 : 2) || contains(argc, argv, 8)) {
-		fprintf(my_cout, "\033[33m-----------------------------------\033[0m\n");
-		fprintf(my_cout, "\033[33mTesting my_print_alpha...\033[0m\n");
-			testHand(stream);
+		fprintf(my_cout, "\033[33mTesting Put nbr...\033[0m\n");
+			testmy_put_nbr(stream);
 	}
 #endif
 #if	TEST_EXO >= 9
 	if (argc < (output ? 3 : 2) || contains(argc, argv, 9)) {
 		fprintf(my_cout, "\033[33m-----------------------------------\033[0m\n");
-		fprintf(my_cout, "\033[33mTesting my_print_alpha...\033[0m\n");
-			testHand(stream);
+		fprintf(my_cout, "\033[33mTesting my_print_combn...\033[0m\n");
+			testmy_print_combn(stream);
 	}
 #endif
 	fclose(stream);
